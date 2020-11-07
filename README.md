@@ -1,6 +1,4 @@
-# Frontend for the Simple API using Laravel Lumen
-
-This Project is the Angular Frontend for the [Simple API using Laravel Lumen](https://github.com/julianomacielferreira/laravel-api-backend).
+# Frontend for the [Simple API using Laravel Lumen](https://github.com/julianomacielferreira/laravel-api-backend)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
 
