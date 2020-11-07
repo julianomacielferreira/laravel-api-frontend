@@ -28,17 +28,21 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 # References
 
-- Angular: [https://angular.io/](https://angular.io/)
+- [Angular](https://angular.io/)
 
-- Material Design: [https://material.io/](https://material.io/)
+- [Material Design](https://material.io/)
 
-- Angular Material: [https://material.angular.io/](https://material.angular.io/)
+- [Angular Material](https://material.angular.io/)
 
-- Pexels&trade;: [https://www.pexels.com/](https://www.pexels.com/)
+- [Pexels&trade;](https://www.pexels.com/)
 
-- Sass&trade;: [https://sass-lang.com/](https://sass-lang.com/)
+- [Sass&trade;](https://sass-lang.com/)
 
-- Webpack&trade;: [https://webpack.js.org/](https://webpack.js.org/)
+- [Webpack&trade;](https://webpack.js.org/)
+
+- [Angular Login App with JWT token authentication](https://www.youtube.com/watch?v=BZ_91HKzNDM)
+
+- [JWT Authorization | Angular Router Guards | Token Refresh](https://www.youtube.com/watch?v=F1GUjHPpCLA)
 
 # License
 
