@@ -21,28 +21,22 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { LoginComponent } from './pages/login/login.component';
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { AppMaterialModule } from './app-material.module';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+
+const materialModules = [
+  MatFormFieldModule,
+  MatInputModule,
+  MatButtonModule,
+  MatCardModule
+];
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoginComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    AppMaterialModule,
-    FlexLayoutModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  declarations: [],
+  imports: materialModules,
+  exports: materialModules
 })
-export class AppModule { }
+export class AppMaterialModule { }
