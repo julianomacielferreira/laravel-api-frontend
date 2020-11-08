@@ -22,6 +22,20 @@
  * THE SOFTWARE.
  */
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, FormGroupDirective, NgForm, Validators } from '@angular/forms';
+import { AuthService } from 'src/app/auth.service';
+import { ErrorStateMatcher } from '@angular/material/core';
+
+/** Error when invalid control is dirty, touched, or submitted. */
+export class MyErrorStateMatcher implements ErrorStateMatcher {
+
+  public isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+
+    const isSubmitted = form && form.submitted;
+
+    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
+  }
+}
 
 @Component({
   selector: 'app-login',
@@ -30,9 +44,45 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  public formGroup: FormGroup;
+  public emailFormControl: FormControl;
+  public passwordFormControl: FormControl;
+  public matcher = new MyErrorStateMatcher();
+  public showInvalidLoginMsg: boolean;
+
+  constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
+    this.initForm();
   }
 
+  public login(): void {
+
+    if (this.formGroup.valid) {
+      this.authService.authenticate(this.formGroup.value).subscribe(response => {
+        if (response.message === 'Authorized') {
+          this.showInvalidLoginMsg = false;
+          console.log(response);
+        } else {
+          this.showInvalidLoginMsg = true;
+          console.log(response);
+        }
+      });
+    }
+  }
+
+  private initForm(): void {
+
+    this.emailFormControl = new FormControl('', [
+      Validators.required,
+      Validators.email,
+    ]);
+
+    this.passwordFormControl = new FormControl('', [Validators.required]);
+
+    this.formGroup = new FormGroup({
+      email: this.emailFormControl,
+      password: this.passwordFormControl
+    });
+  }
 }

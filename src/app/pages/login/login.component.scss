@@ -28,6 +28,21 @@
   }
 
   .login-form {
-      padding: 1rem;
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .login-form-input {
+    width: 100%;
+  }
+
+  .my-1 {
+    margin-top: 1rem;
+  }
+
+  .title-center {
+    margin: 0 auto;
   }
 }
