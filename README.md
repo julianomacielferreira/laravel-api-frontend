@@ -4,9 +4,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Screenshots
 
-![](src/assets/screenshots/1.png)
-![](src/assets/screenshots/2.png)
-![](src/assets/screenshots/3.png)
+| Form            |  Required |  Invalid |
+:-------------------------:|:-------------------------:|:-------------------------:
+![](src/assets/screenshots/1.png) | ![](src/assets/screenshots/2.png) | ![](src/assets/screenshots/3.png)
 
 ## Development server
 
