@@ -34,6 +34,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 - [Angular Material](https://material.angular.io/)
 
+- [MATERIAL-UI](https://material-ui.com/customization/color/)
+
 - [Pexels&trade;](https://www.pexels.com/)
 
 - [Sass&trade;](https://sass-lang.com/)
@@ -43,6 +45,10 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - [Angular Login App with JWT token authentication](https://www.youtube.com/watch?v=BZ_91HKzNDM)
 
 - [JWT Authorization | Angular Router Guards | Token Refresh](https://www.youtube.com/watch?v=F1GUjHPpCLA)
+
+- [Angular login page | Material Design with Flex-Layout | Angular crud application #1](https://www.youtube.com/watch?v=f3shwARuhEM)
+
+- [How to change the Angular material theme in just 5 minutes](https://www.youtube.com/watch?v=NugqJxFYmDM)
 
 # License
 
