@@ -23,8 +23,9 @@
  */
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormGroupDirective, NgForm, Validators } from '@angular/forms';
-import { AuthService } from 'src/app/auth.service';
 import { ErrorStateMatcher } from '@angular/material/core';
+import { Router } from '@angular/router';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -50,7 +51,10 @@ export class LoginComponent implements OnInit {
   public matcher = new MyErrorStateMatcher();
   public showInvalidLoginMsg: boolean;
 
-  constructor(private authService: AuthService) { }
+  constructor(
+    private authenticationService: AuthenticationService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     this.initForm();
@@ -59,13 +63,15 @@ export class LoginComponent implements OnInit {
   public login(): void {
 
     if (this.formGroup.valid) {
-      this.authService.authenticate(this.formGroup.value).subscribe(response => {
-        if (response.message === 'Authorized') {
-          this.showInvalidLoginMsg = false;
-          console.log(response);
+
+      const loginData = this.formGroup.value;
+
+      this.authenticationService.authenticate(loginData).subscribe(success => {
+        console.log(success);
+        if (success) {
+          this.router.navigate(['/dashboard']);
         } else {
           this.showInvalidLoginMsg = true;
-          console.log(response);
         }
       });
     }

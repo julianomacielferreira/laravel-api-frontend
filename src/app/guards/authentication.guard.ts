@@ -21,20 +21,26 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-// This file can be replaced during build by using the `fileReplacements` array.
-// `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
-// The list of file replacements can be found in `angular.json`.
+import { Injectable } from '@angular/core';
+import { CanActivate, Router } from '@angular/router';
+import { AuthenticationService } from '../services/authentication.service';
 
-export const environment = {
-  production: false,
-  restAPIUrl: `http://localhost:8080`
-};
+@Injectable({
+  providedIn: 'root'
+})
+export class AuthenticationGuard implements CanActivate {
 
-/*
- * For easier debugging in development mode, you can import the following file
- * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
- *
- * This import should be commented out in production mode because it will have a negative impact
- * on performance if an error is thrown.
- */
-// import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+  constructor(
+    private authenticationService: AuthenticationService,
+    private router: Router
+  ) { }
+
+  canActivate(): boolean {
+
+    if (this.authenticationService.isLoggedIn()) {
+      this.router.navigate(['/dashboard']);
+    }
+
+    return !this.authenticationService.isLoggedIn();
+  }
+}

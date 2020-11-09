@@ -21,20 +21,10 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment';
+import { User } from './user';
 
-@Injectable({
-  providedIn: 'root'
-})
-export class AuthService {
+describe('User', () => {
+  it('should create an instance', () => {
 
-  constructor(private http: HttpClient) { }
-
-  public authenticate(data: any): Observable<any> {
-
-    return this.http.post(`${environment.restAPIURL}/api/login`, data);
-  }
-}
+  });
+});

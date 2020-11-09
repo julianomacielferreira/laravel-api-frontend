@@ -23,5 +23,5 @@
  */
 export const environment = {
   production: true,
-  restAPIURL: `http://your-domain.com`
+  restAPIUrl: `http://your-domain.com`
 };

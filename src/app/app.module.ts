@@ -21,7 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-import { HttpClientModule } from '@angular/common/http/';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http/';
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -32,11 +32,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
 import { StoreModule } from '@ngrx/store';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { AuthenticationGuard } from './guards/authentication.guard';
+import { AuthenticationService } from './services/authentication.service';
+import { TokenInterceptor } from './interceptors/token.interceptor';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +54,14 @@ import { StoreModule } from '@ngrx/store';
     FlexLayoutModule,
     StoreModule.forRoot({}, {})
   ],
-  providers: [],
+  providers: [
+    AuthenticationGuard,
+    AuthenticationService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -23,10 +23,22 @@
  */
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthenticationGuard } from './guards/authentication.guard';
+import { DashboardGuard } from './guards/dashboard.guard';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LoginComponent } from './pages/login/login.component';
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent },
+  {
+    path: 'login',
+    component: LoginComponent,
+    canActivate: [AuthenticationGuard]
+  },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    canActivate: [DashboardGuard]
+  },
   { path: '**', redirectTo: '/login', pathMatch: 'full' }
 ];
 
