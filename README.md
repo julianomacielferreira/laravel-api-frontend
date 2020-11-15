@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Screenshots
 
-| Form            |  Required |  Invalid |
+| Login Form            |  Required |  Invalid |
 :-------------------------:|:-------------------------:|:-------------------------:
 ![](src/assets/screenshots/1.png) | ![](src/assets/screenshots/2.png) | ![](src/assets/screenshots/3.png)
 
