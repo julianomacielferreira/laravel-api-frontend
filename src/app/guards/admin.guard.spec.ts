@@ -21,34 +21,19 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-import { NgModule } from '@angular/core';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatButtonModule } from '@angular/material/button';
-import { MatCardModule } from '@angular/material/card';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatIconModule } from '@angular/material/icon';
-import { MatMenuModule } from '@angular/material/menu';
-import { MatDividerModule } from '@angular/material/divider';
-import { MatListModule } from '@angular/material/list';
-import { MatSidenavModule } from "@angular/material/sidenav";
+import { TestBed } from '@angular/core/testing';
 
-const materialModules = [
-  MatFormFieldModule,
-  MatInputModule,
-  MatButtonModule,
-  MatCardModule,
-  MatToolbarModule,
-  MatIconModule,
-  MatMenuModule,
-  MatDividerModule,
-  MatListModule,
-  MatSidenavModule
-];
+import { AdminGuard } from './admin.guard';
 
-@NgModule({
-  declarations: [],
-  imports: materialModules,
-  exports: materialModules
-})
-export class AppMaterialModule { }
+describe('AdminGuard', () => {
+  let guard: AdminGuard;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({});
+    guard = TestBed.inject(AdminGuard);
+  });
+
+  it('should be created', () => {
+    expect(guard).toBeTruthy();
+  });
+});

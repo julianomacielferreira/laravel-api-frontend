@@ -21,29 +21,24 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-import { Injectable } from '@angular/core';
-import { CanActivate, CanLoad, Router } from '@angular/router';
-import { AuthenticationService } from '../services/authentication.service';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
-@Injectable({
-  providedIn: 'root'
+@Component({
+  selector: 'app-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.scss']
 })
-export class DashboardGuard implements CanActivate, CanLoad {
+export class HeaderComponent implements OnInit {
 
-  constructor(
-    private authenticationService: AuthenticationService,
-    private router: Router
-  ) { }
+  @Output() toogleSidebarEvent: EventEmitter<any> = new EventEmitter();
 
-  canActivate(): boolean {
-    return this.canLoad();
+  constructor() { }
+
+  ngOnInit(): void {
   }
 
-  canLoad(): boolean {
-
-    if (!this.authenticationService.isLoggedIn()) {
-      this.router.navigate(['/login']);
-    }
-    return this.authenticationService.isLoggedIn();
+  public triggerToggleSidebar(): void {
+    this.toogleSidebarEvent.emit();
   }
+
 }

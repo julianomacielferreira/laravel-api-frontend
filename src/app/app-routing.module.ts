@@ -24,7 +24,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthenticationGuard } from './guards/authentication.guard';
-import { DashboardGuard } from './guards/dashboard.guard';
+import { AdminGuard } from './guards/admin.guard';
+import { AdminComponent } from './pages/admin/admin.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LoginComponent } from './pages/login/login.component';
 
@@ -35,9 +36,15 @@ const routes: Routes = [
     canActivate: [AuthenticationGuard]
   },
   {
-    path: 'dashboard',
-    component: DashboardComponent,
-    canActivate: [DashboardGuard]
+    path: 'admin',
+    component: AdminComponent,
+    canActivate: [AdminGuard],
+    children: [
+      {
+        path: "",
+        component: DashboardComponent,
+      },
+    ],
   },
   { path: '**', redirectTo: '/login', pathMatch: 'full' }
 ];

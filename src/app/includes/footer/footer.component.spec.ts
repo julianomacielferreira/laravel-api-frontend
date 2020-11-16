@@ -21,19 +21,28 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-import { TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DashboardGuard } from './dashboard.guard';
+import { FooterComponent } from './footer.component';
 
-describe('DashboardGuard', () => {
-  let guard: DashboardGuard;
+describe('FooterComponent', () => {
+  let component: FooterComponent;
+  let fixture: ComponentFixture<FooterComponent>;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({});
-    guard = TestBed.inject(DashboardGuard);
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [FooterComponent]
+    })
+      .compileComponents();
   });
 
-  it('should be created', () => {
-    expect(guard).toBeTruthy();
+  beforeEach(() => {
+    fixture = TestBed.createComponent(FooterComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
   });
 });

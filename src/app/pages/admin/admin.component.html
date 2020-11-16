@@ -1,0 +1,18 @@
+<!-- HEADER -->
+<app-header (toogleSidebarEvent)="sidebarToggle($event)"></app-header>
+<!-- ./END -->
+<mat-drawer-container>
+    <mat-drawer #drawer mode="side" [opened]="sidebarOpened">
+        <!-- SIDEBAR -->
+        <app-sidebar></app-sidebar>
+        <!-- ./END -->
+    </mat-drawer>
+    <mat-drawer-content>
+        <!-- MAIN CONTENT -->
+        <router-outlet></router-outlet>
+        <!-- ./END -->
+    </mat-drawer-content>
+</mat-drawer-container>
+<!-- FOOTER -->
+<app-footer></app-footer>
+<!-- ./END -->

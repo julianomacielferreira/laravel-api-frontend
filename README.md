@@ -4,9 +4,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Screenshots
 
-| Login Form            |  Required |  Invalid |
-:-------------------------:|:-------------------------:|:-------------------------:
-![](src/assets/screenshots/1.png) | ![](src/assets/screenshots/2.png) | ![](src/assets/screenshots/3.png)
+|            Login Form             |             Required              |              Invalid              |
+| :-------------------------------: | :-------------------------------: | :-------------------------------: |
+| ![](src/assets/screenshots/1.png) | ![](src/assets/screenshots/2.png) | ![](src/assets/screenshots/3.png) |
 
 ## Development server
 
@@ -55,6 +55,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - [Angular login page | Material Design with Flex-Layout | Angular crud application #1](https://www.youtube.com/watch?v=f3shwARuhEM)
 
 - [How to change the Angular material theme in just 5 minutes](https://www.youtube.com/watch?v=NugqJxFYmDM)
+
+- [Angular 8 Admin Dashboard Panel from scratch using Angular Material, highcharts and flex-layout](https://www.youtube.com/watch?v=FP7Hs8lTy1k)
 
 # License
 

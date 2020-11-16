@@ -69,7 +69,7 @@ export class LoginComponent implements OnInit {
       this.authenticationService.authenticate(loginData).subscribe(success => {
         console.log(success);
         if (success) {
-          this.router.navigate(['/dashboard']);
+          this.router.navigate(['/admin']);
         } else {
           this.showInvalidLoginMsg = true;
         }

@@ -36,12 +36,20 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { AuthenticationGuard } from './guards/authentication.guard';
 import { AuthenticationService } from './services/authentication.service';
 import { TokenInterceptor } from './interceptors/token.interceptor';
+import { HeaderComponent } from './includes/header/header.component';
+import { FooterComponent } from './includes/footer/footer.component';
+import { SidebarComponent } from './includes/sidebar/sidebar.component';
+import { AdminComponent } from './pages/admin/admin.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    HeaderComponent,
+    FooterComponent,
+    SidebarComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

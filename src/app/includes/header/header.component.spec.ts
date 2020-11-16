@@ -21,34 +21,28 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-import { NgModule } from '@angular/core';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatButtonModule } from '@angular/material/button';
-import { MatCardModule } from '@angular/material/card';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatIconModule } from '@angular/material/icon';
-import { MatMenuModule } from '@angular/material/menu';
-import { MatDividerModule } from '@angular/material/divider';
-import { MatListModule } from '@angular/material/list';
-import { MatSidenavModule } from "@angular/material/sidenav";
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-const materialModules = [
-  MatFormFieldModule,
-  MatInputModule,
-  MatButtonModule,
-  MatCardModule,
-  MatToolbarModule,
-  MatIconModule,
-  MatMenuModule,
-  MatDividerModule,
-  MatListModule,
-  MatSidenavModule
-];
+import { HeaderComponent } from './header.component';
 
-@NgModule({
-  declarations: [],
-  imports: materialModules,
-  exports: materialModules
-})
-export class AppMaterialModule { }
+describe('HeaderComponent', () => {
+  let component: HeaderComponent;
+  let fixture: ComponentFixture<HeaderComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [HeaderComponent]
+    })
+      .compileComponents();
+  });
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(HeaderComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

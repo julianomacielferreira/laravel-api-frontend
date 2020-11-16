@@ -21,34 +21,29 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-import { NgModule } from '@angular/core';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatButtonModule } from '@angular/material/button';
-import { MatCardModule } from '@angular/material/card';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatIconModule } from '@angular/material/icon';
-import { MatMenuModule } from '@angular/material/menu';
-import { MatDividerModule } from '@angular/material/divider';
-import { MatListModule } from '@angular/material/list';
-import { MatSidenavModule } from "@angular/material/sidenav";
+import { Injectable } from '@angular/core';
+import { CanActivate, CanLoad, Router } from '@angular/router';
+import { AuthenticationService } from '../services/authentication.service';
 
-const materialModules = [
-  MatFormFieldModule,
-  MatInputModule,
-  MatButtonModule,
-  MatCardModule,
-  MatToolbarModule,
-  MatIconModule,
-  MatMenuModule,
-  MatDividerModule,
-  MatListModule,
-  MatSidenavModule
-];
-
-@NgModule({
-  declarations: [],
-  imports: materialModules,
-  exports: materialModules
+@Injectable({
+  providedIn: 'root'
 })
-export class AppMaterialModule { }
+export class AdminGuard implements CanActivate, CanLoad {
+
+  constructor(
+    private authenticationService: AuthenticationService,
+    private router: Router
+  ) { }
+
+  canActivate(): boolean {
+    return this.canLoad();
+  }
+
+  canLoad(): boolean {
+
+    if (!this.authenticationService.isLoggedIn()) {
+      this.router.navigate(['/login']);
+    }
+    return this.authenticationService.isLoggedIn();
+  }
+}

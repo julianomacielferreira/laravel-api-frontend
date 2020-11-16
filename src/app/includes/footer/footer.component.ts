@@ -21,34 +21,20 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-import { NgModule } from '@angular/core';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatButtonModule } from '@angular/material/button';
-import { MatCardModule } from '@angular/material/card';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatIconModule } from '@angular/material/icon';
-import { MatMenuModule } from '@angular/material/menu';
-import { MatDividerModule } from '@angular/material/divider';
-import { MatListModule } from '@angular/material/list';
-import { MatSidenavModule } from "@angular/material/sidenav";
+import { Component, OnInit } from '@angular/core';
 
-const materialModules = [
-  MatFormFieldModule,
-  MatInputModule,
-  MatButtonModule,
-  MatCardModule,
-  MatToolbarModule,
-  MatIconModule,
-  MatMenuModule,
-  MatDividerModule,
-  MatListModule,
-  MatSidenavModule
-];
-
-@NgModule({
-  declarations: [],
-  imports: materialModules,
-  exports: materialModules
+@Component({
+  selector: 'app-footer',
+  templateUrl: './footer.component.html',
+  styleUrls: ['./footer.component.scss']
 })
-export class AppMaterialModule { }
+export class FooterComponent implements OnInit {
+
+  public now: Date = new Date();
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+}
