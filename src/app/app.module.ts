@@ -36,9 +36,9 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { AuthenticationGuard } from './guards/authentication.guard';
 import { AuthenticationService } from './services/authentication.service';
 import { TokenInterceptor } from './interceptors/token.interceptor';
-import { HeaderComponent } from './includes/header/header.component';
-import { FooterComponent } from './includes/footer/footer.component';
-import { SidebarComponent } from './includes/sidebar/sidebar.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { AdminComponent } from './pages/admin/admin.component';
 
 @NgModule({

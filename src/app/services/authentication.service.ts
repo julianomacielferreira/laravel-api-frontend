@@ -64,14 +64,13 @@ export class AuthenticationService {
     }).pipe(
       tap(
         () => {
-
           this.loggedUser = null;
           this.removeTokens();
         }
       ),
       mapTo(true),
       catchError(error => {
-        alert(error.error);
+        console.log(error.error);
         return of(false);
       }));
   }
