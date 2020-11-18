@@ -40,6 +40,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { AdminComponent } from './pages/admin/admin.component';
+import { UserTableComponent } from './components/user-table/user-table.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { AdminComponent } from './pages/admin/admin.component';
     HeaderComponent,
     FooterComponent,
     SidebarComponent,
-    AdminComponent
+    AdminComponent,
+    UserTableComponent
   ],
   imports: [
     BrowserModule,

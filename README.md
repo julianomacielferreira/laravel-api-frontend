@@ -8,6 +8,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 | :-------------------------------: | :-------------------------------: | :-------------------------------: |
 | ![](src/assets/screenshots/1.png) | ![](src/assets/screenshots/2.png) | ![](src/assets/screenshots/3.png) |
 
+|             Dashboard             |
+| :-------------------------------: |
+| ![](src/assets/screenshots/4.png) |
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
