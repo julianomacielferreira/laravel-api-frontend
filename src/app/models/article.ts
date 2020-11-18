@@ -21,7 +21,15 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-footer {
-  padding: 0.5rem;
-  text-align: center;
+export class Article {
+
+    constructor(
+        public id: number,
+        public user_id: number,
+        public title: string,
+        public description: string,
+        public status: boolean,
+        public created_at: Date,
+        public updated_at: Date
+    ) { }
 }

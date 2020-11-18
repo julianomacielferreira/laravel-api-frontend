@@ -21,7 +21,10 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-footer {
-  padding: 0.5rem;
-  text-align: center;
-}
+import { Article } from './article';
+
+describe('Article', () => {
+  it('should create an instance', () => {
+
+  });
+});

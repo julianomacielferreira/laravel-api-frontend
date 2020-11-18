@@ -21,7 +21,32 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-footer {
-  padding: 0.5rem;
-  text-align: center;
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
+import { Article } from '../models/article';
+import { AuthenticationService } from './authentication.service';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class ArticleService {
+
+  constructor(
+    private authenticationService: AuthenticationService,
+    private http: HttpClient
+  ) { }
+
+  public listAll(): Observable<Article[]> {
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${this.authenticationService.getToken()}`
+      })
+    };
+
+    return this.http.get<Article[]>(`${environment.restAPIUrl}/api/articles`, httpOptions);
+  }
 }

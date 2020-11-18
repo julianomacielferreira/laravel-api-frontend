@@ -41,6 +41,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { AdminComponent } from './pages/admin/admin.component';
 import { UserTableComponent } from './components/user-table/user-table.component';
+import { ArticleTableComponent } from './components/article-table/article-table.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { UserTableComponent } from './components/user-table/user-table.component
     FooterComponent,
     SidebarComponent,
     AdminComponent,
-    UserTableComponent
+    UserTableComponent,
+    ArticleTableComponent
   ],
   imports: [
     BrowserModule,

@@ -48,6 +48,6 @@ export class UserService {
       })
     };
 
-    return this.http.get<any>(`${environment.restAPIUrl}/api/users`, httpOptions);
+    return this.http.get<User[]>(`${environment.restAPIUrl}/api/users`, httpOptions);
   }
 }

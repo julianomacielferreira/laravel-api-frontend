@@ -23,36 +23,37 @@
  */
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { User } from 'src/app/models/user';
-import { UserService } from 'src/app/services/user.service';
+import { MatSort } from '@angular/material/sort';
+import { Article } from 'src/app/models/article';
+import { ArticleService } from 'src/app/services/article.service';
 
 @Component({
-  selector: 'app-user-table',
-  templateUrl: './user-table.component.html',
-  styleUrls: ['./user-table.component.scss']
+  selector: 'app-article-table',
+  templateUrl: './article-table.component.html',
+  styleUrls: ['./article-table.component.scss']
 })
-export class UserTableComponent implements OnInit {
+export class ArticleTableComponent implements OnInit {
 
-  public displayedColumns: string[] = ['id', 'name', 'email', 'created_at', 'updated_at'];
-  public dataSource: MatTableDataSource<User>;
+  public displayedColumns: string[] = ['id', 'user_id', 'title', 'description', 'status', 'created_at', 'updated_at'];
+  public dataSource: MatTableDataSource<Article>;
 
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 
-  constructor(private userService: UserService) { }
+  constructor(private articleService: ArticleService) { }
 
   ngOnInit(): void {
 
-    this.userService.listAll().subscribe((response: any) => {
+    this.articleService.listAll().subscribe((response: any) => {
 
-      this.dataSource = new MatTableDataSource<User>(response.users);
+      this.dataSource = new MatTableDataSource<Article>(response.articles);
 
       this.dataSource.sort = this.sort;
 
       this.dataSource.paginator = this.paginator;
     });
   }
+
 
 }

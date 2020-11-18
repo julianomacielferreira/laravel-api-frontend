@@ -21,7 +21,28 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-footer {
-  padding: 0.5rem;
-  text-align: center;
-}
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { ArticleTableComponent } from './article-table.component';
+
+describe('ArticleTableComponent', () => {
+  let component: ArticleTableComponent;
+  let fixture: ComponentFixture<ArticleTableComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ArticleTableComponent]
+    })
+      .compileComponents();
+  });
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(ArticleTableComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
